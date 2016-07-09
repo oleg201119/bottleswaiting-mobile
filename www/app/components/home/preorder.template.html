@@ -1,0 +1,278 @@
+<ion-view class="eventlist-view" id="preorder">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Preorder
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-tabs class="tabs-striped tabs-top tabs-background-royal tabs-color-light tabs-icon-left">
+        <ion-tab title="Liquor">
+            <ion-view id="liquor">
+                <ion-content class="has-header has-tabs-top">
+                    <slick class="liquor-scroll" infinite=false slides-to-show=3 slides-to-scroll=1 centerMode=true>
+                        <div class="item" ng-class="{'item-selected':selectedLiquor==0}" ng-click="selectLiquor(0)">
+                            <img src="img/liquor/1.jpg"/>
+                            <div class="name-style">
+                                Champagne
+                            </div>
+                        </div>
+                        <div class="item" ng-class="{'item-selected':selectedLiquor==1}" ng-click="selectLiquor(1)">
+                            <img src="img/liquor/2.jpg" />
+                            <div class="name-style">
+                                Tequila
+                            </div>
+                        </div>
+                        <div class="item"  ng-class="{'item-selected':selectedLiquor==2}" ng-click="selectLiquor(2)">
+                            <img src="img/liquor/3.jpg" />
+                            <div class="name-style">
+                                Gin
+                            </div>
+                        </div>
+                        <div class="item"  ng-class="{'item-selected':selectedLiquor==3}" ng-click="selectLiquor(3)">
+                            <img src="img/liquor/4.jpg" />
+                            <div class="name-style">
+                                Scotch
+                            </div>
+                        </div>
+                        <div class="item"  ng-class="{'item-selected':selectedLiquor==4}" ng-click="selectLiquor(4)">
+                            <img src="img/liquor/5.jpg" />
+                            <div class="name-style">
+                                Vodka
+                            </div>
+                        </div>
+                    </slick>
+
+                    <div id="liquor-list">
+                        <div class="row header">
+                            <div class="col col-20">Qty.</div>
+                            <div class="col col-40">Name</div>
+                            <div class="col col-20">Size</div>
+                            <div class="col col-20">Price</div>
+                        </div>
+
+                        <div class="list">
+                            <ion-scroll direction="y" class="scroll-list">
+                                <div class="row" ng-repeat="item in liquorList" ng-class="{'detail':((selectedLiquor==-1 || selectedLiquor==item.liquorType) && item.count>0)}">
+                                    <div class="col col-20"><input type="number" ng-model="item.count" min="0" ng-disabled="(selectedLiquor!=-1 && selectedLiquor!=item.liquorType)"></div>
+                                    <div class="col col-40">{{item.name}}</div>
+                                    <div class="col col-20">{{item.volume}} {{item.volumeUnit}}</div>
+                                    <div class="col col-20">${{item.price * item.count}}</div>
+                                </div>
+                            </ion-scroll>
+                        </div>
+
+                        <div class="row total" style="color:white">
+                          <div class="col col-70 text-center">Total Minimum<br/>${{selectedTable.minBuy}}</div>
+                          <div class="col col-30">Total Spent<br/>${{getTotal()}}</div>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                          NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="Mixers">
+            <ion-view>
+                <ion-content class="has-header has-tabs-top">
+                    <div id="mixer-list">
+                        <div class="row header">
+                            <div class="col col-20">Qty.</div>
+                            <div class="col col-40">Name</div>
+                            <div class="col col-20">Size</div>
+                            <div class="col col-20">Price</div>
+                        </div>
+
+                        <ion-scroll direction="y" class="scroll-list">
+                            <div class="row" ng-repeat="item in mixerList" ng-class="{'detail':item.count>0}">
+                              <div class="col col-20"><input type="number" ng-model="item.count" min="0"></div>
+                              <div class="col col-40">{{item.name}}</div>
+                              <div class="col col-20">{{item.volume}} {{item.volumeUnit}}</div>
+                              <div class="col col-20">${{item.price * item.count}}</div>
+                            </div>
+                        </ion-scroll>
+
+                        <div class="row total">
+                            <div class="col col-70 text-center">Total Minimum<br/>${{selectedTable.minBuy}}</div>
+                            <div class="col col-30">Total Spent<br/>${{getTotal()}}</div>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                          NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="Packages">
+            <ion-view>
+                <ion-content class="has-header has-tabs-top">
+                    <div id="package-list">
+                        <div class="row header">
+                          <div class="col col-20"></div>
+                          <div class="col col-40">Name</div>
+                          <div class="col col-20"></div>
+                          <div class="col col-20">Price</div>
+                        </div>
+
+                        <ion-scroll direction="y" class="scroll-list">
+
+                            <div class="row detail" ng-repeat = "item in packageList" ng-class="{'detail':item.count>0}">
+                                <div class="col col-20"><input type="number" ng-model="item.count" min="0"></div>
+                                <div class="col col-40">
+                                    <div class="title">{{item.name}}</div>
+                                    <span ng-repeat="subitem in item.packageItems">{{subitem.quantity}} {{subitem.name}}<br/></span>
+                                </div>
+                                <div class="col col-20">
+                                    <br/>
+                                    <span ng-repeat="subitem in item.packageItems">{{subitem.volume}} {{subitem.volumeUnit}}<br/></span>
+                                </div>
+                                <div class="col col-20">${{item.price * item.count}}</div>
+                            </div>
+                        </ion-scroll>
+
+                        <div class="row total">
+                          <div class="col col-70 text-center">Total Minimum<br/>${{selectedTable.minBuy}}</div>
+                          <div class="col col-30">Total Spent<br/>${{getTotal()}}</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                          NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="Celebrations">
+            <ion-view>
+                <ion-content class="has-header has-tabs-top">
+                    <div id="celebration-list">
+                        <div class="row header">
+                          <div class="col col-40" style="text-align: left; padding-left: 25px;">Name</div>
+                          <div class="col col-30">Min Spend</div>
+                          <div class="col col-30">Ala Carte</div>
+                        </div>
+
+                        <ion-scroll direction="y" class="scroll-list">
+
+                            <div class="detail" ng-repeat="item in celebrityList">
+                                <div class="row">
+                                    <div class="col col-40">
+                                        <div class="title">
+                                            {{item.name}}
+                                        </div>
+                                    </div>
+                                    <div class="col col-30">
+                                        <button class="met-btn button button-energized">
+                                            MET
+                                        </button>
+                                    </div>
+                                    <div class="col col-30">${{item.aCartePrice}}</div>
+                                </div>
+                                <div class="row desc">
+                                    Description
+                                </div>
+                                <div class="row desc-value">
+                                    <div class="col col-80">
+                                        {{item.description}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="detail">-->
+                                <!--<div class="row">-->
+                                  <!--<div class="col col-40">-->
+                                    <!--<div class="title">-->
+                                        <!--Name Sign<br/>-->
+                                        <!--(Charles)-->
+                                    <!--</div>-->
+                                  <!--</div>-->
+                                  <!--<div class="col col-30">-->
+                                    <!--<button class="met-btn button button-energized">-->
+                                      <!--MET-->
+                                    <!--</button>-->
+                                  <!--</div>-->
+                                  <!--<div class="col col-30">$400</div>-->
+                                <!--</div>-->
+                                <!--<div class="row desc">-->
+                                    <!--Description-->
+                                <!--</div>-->
+                                <!--<div class="row desc-value">-->
+                                    <!--<div class="col col-80">-->
+                                        <!--Our bottle service girls come out with cards with the letters your name spelled out on them.-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="detail">-->
+                                <!--<div class="row">-->
+                                  <!--<div class="col col-40">-->
+                                    <!--<div class="title">-->
+                                        <!--Boat Ride<br/>-->
+                                    <!--</div>-->
+                                  <!--</div>-->
+                                  <!--<div class="col col-30">-->
+                                    <!--<button class="met-btn button button-energized">-->
+                                      <!--MET-->
+                                    <!--</button>-->
+                                  <!--</div>-->
+                                  <!--<div class="col col-30">$400</div>-->
+                                <!--</div>-->
+                                <!--<div class="row desc">-->
+                                    <!--Description-->
+                                <!--</div>-->
+                                <!--<div class="row desc-value">-->
+                                    <!--<div class="col col-80">-->
+                                        <!--Ride aroiund our club in a boat carried by our buff bouncers, to show-->
+                                        <!--everyone yhat you have so much money that you don't know what to do with it.-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </ion-scroll>
+
+                        <div class="row total">
+                            <div class="col col-70 text-center">Total Minimum<br/>${{selectedTable.minBuy}}</div>
+                            <div class="col col-30">Total Spent<br/>${{getTotal()}}</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                          NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>

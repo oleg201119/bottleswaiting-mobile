@@ -1,0 +1,98 @@
+.location-view {
+
+  // Content
+  .scroll-content {
+    background-color: $royal;
+
+    .description {
+      padding: 20px 20px 0px 20px;
+
+      h4 {
+        color: $light;
+        margin-bottom: 0px;
+        font-weight: 400;
+      }
+
+      p {
+        color: #A0A0A0;
+        font-size: 12px;
+      }
+    }
+
+    .city-select {
+      padding: 10px 20px 0px 20px;
+
+      .city-item {
+        position: relative;
+        padding: 6px 10px 6px 38px;
+
+        i {
+          position: absolute;
+          font-size: 18px;
+
+          top: 7px;
+          left: 12px;
+
+          &.icon-radio-select {
+            color: $energized;
+          }
+          &.icon-radio-normal {
+            color: #000000;
+          }
+        }
+
+        span {
+          color: $light;
+        }
+      }
+    }
+
+    .date-select {
+      border-top: 1px solid black;
+      padding: 0px 20px 0px 20px;
+      margin-top: 10px;
+    }
+
+    .suggest-city {
+      border-top: 1px solid black;
+      padding: 0px 20px 0px 20px;
+      margin-top: 10px;
+
+      h4 {
+        color: $light;
+        margin-bottom: 0px;
+        font-weight: 400;
+      }
+    }
+
+    .buttons {
+      padding: 0px 20px 0px 20px;
+      margin: 10px;
+
+      text-align: right;
+    }
+
+    // Border
+    .border-on {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $energized;
+    }
+
+    .border-off {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: black;
+    }
+
+    // Focus
+    .focus-on {
+      color: $energized;
+    }
+
+    .focus-off {
+      color: #B7B7B7;
+    }
+
+  }
+}

@@ -1,0 +1,70 @@
+<ion-view class="guestboard-view">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Location & Date</h1>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="top-image" style="background-image:url('{{ topimage }}')">
+        </div>
+
+        <div class="analytic-pane">
+            <div>
+                Max Guests: {{maxGuest}}
+            </div>
+            <div>
+                Min.Purchase: ${{minPurchase}}
+            </div>
+        </div>
+
+        <div class="eta-select">
+            <div class="eta-label">ETA</div>
+            <div class="floating-label-field" ng-class="{'border-on':focusETA==true, 'border-off':focusETA==false}">
+                <select ng-focus="focusETA=true" ng-blur="focusETA=false">
+                    <option value="" disabled class="placeholder">Unknown</option>
+                    <option ng-repeat="month in months track by $index">{{month}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="guest-type-select">
+            <div class="type-item" ng-click="selectGuestType(0);">
+                <i ng-class="{'icon-radio-select': selectedType==0, 'icon-radio-normal': selectedType!=0}"></i>
+                <span>You and your guests will arrive at the same time</span>
+
+                <div class="floating-label-field" ng-class="{'border-on':focusGuest==true, 'border-off':focusGuest==false}" ng-show="selectedType==0" >
+                    <select ng-focus="focusGuest=true" ng-blur="focusGuest=false" ng-model="selectedGuest">
+                        <option value="" disabled class="placeholder">Guests</option>
+                        <option ng-repeat="month in months track by $index">{{month}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="type-item" ng-click="selectGuestType(1);">
+                <i ng-class="{'icon-radio-select': selectedType==1, 'icon-radio-normal': selectedType!=1}"></i>
+                <span>You and your guests will arrive separately</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="button button-medium button-energized min-width-100" ng-click="doGuestBoardNext()">NEXT</button>
+        </div>
+    </ion-content>
+
+</ion-view>

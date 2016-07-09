@@ -1,0 +1,66 @@
+<ion-view class="signup-view">
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Personalize Your Experience</h4>
+            <p>Please enter your real name. Venues will need it to correctly identify you.</p>
+        </div>
+
+        <div class="wrapper">
+            <div class="avatar-placeholder">
+                <img src="img/profile-avatar-placeholder.svg" ng-click="doCapturePhoto()">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusFirstName==true, 'border-off':focusFirstName==false}">
+                        <label ng-show="account.firstname" class="floating-label" ng-class="{'focus-on':focusFirstName==true, 'focus-off':focusFirstName==false}">First Name</label>
+                        <input type="text" placeholder="First Name" ng-focus="focusFirstName=true" ng-blur="focusFirstName=false" ng-model="account.firstname">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusLastName==true, 'border-off':focusLastName==false}">
+                        <label ng-show="account.lastname" class="floating-label" ng-class="{'focus-on':focusLastName==true, 'focus-off':focusLastName==false}">Last Name</label>
+                        <input type="text" placeholder="Last Name" ng-focus="focusLastName=true" ng-blur="focusLastName=false" ng-model="account.lastname">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusBirthday==true, 'border-off':focusBirthday==false}">
+                        <label ng-show="account.birthday" class="floating-label" ng-class="{'focus-on':focusBirthday==true, 'focus-off':focusBirthday==false}">Birthday</label>
+                        <input type="text" placeholder="Birthday" ng-focus="focusBirthday=true" ng-blur="focusBirthday=false" ng-model="account.birthday">
+                        <label class="hint" ng-show="hintBirthday==true">MM/DD/YYYY</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusGender==true, 'border-off':focusGender==false}">
+                        <label ng-show="account.gender" class="floating-label" ng-class="{'focus-on':focusGender==true, 'focus-off':focusGender==false}">Gender</label>
+                        <select ng-focus="focusGender=true" ng-blur="focusGender=false" ng-model="account.gender">
+                            <option value="" disabled class="placeholder">Gender</option>
+                            <option class="color-black" value="MALE">MALE</option>
+                            <option class="color-black" value="FEMALE">FEMALE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-medium button-energized min-width-100" ng-click="goNext('signup3')">NEXT</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

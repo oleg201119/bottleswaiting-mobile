@@ -1,0 +1,34 @@
+// Popover
+.popover-view {
+  background-color: $energized !important;
+
+  .buttons-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 5px;
+  }
+
+  .scroll-content {
+    background-color: $energized;
+    height: 410px;
+
+    .menu-item {
+      background-color: transparent;
+      color: $light;
+      border: none;
+
+      font-size: 14px;
+
+      &.active, &.activated {
+        background-color: #E77C0A;
+        color: $light !important;
+      }
+
+      &.selected {
+        background-color: #E77C0A;
+        color: $light !important;
+      }
+    }
+  }
+}

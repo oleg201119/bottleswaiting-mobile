@@ -1,0 +1,54 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+*/
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #4598D3 !default;
+$balanced:                        #60C4B8 !default;
+$energized:                       #FF9E16 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #260038 !default;
+$dark:                            #444 !default;
+
+$button-calm-active-bg:           darken($calm, 10%) !default;
+
+// The path for ou ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include variables
+@import "www/scss/_variables";
+
+// Include fonts of BottlesWaiting
+@import "www/scss/_fonts";
+@import "www/scss/_icomoon";
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Include all of BottlesWaiting\
+
+@import "scss/_common";
+@import "scss/_icons";
+@import "scss/_signin";
+@import "scss/_signup";
+@import "scss/_sidemenu";
+@import "scss/_popover";
+@import "scss/_eventlist";
+@import "scss/_eventdetail";
+@import "scss/_ordermore";
+@import "scss/_reservation";
+@import "scss/_walkthrough";
+@import "scss/_ordermore";
+@import "scss/_payment";
+@import "scss/_preorder";
+@import "scss/_location";
+@import "scss/_favorites";
+@import "scss/_map";
+@import "scss/_guestboard";
+@import "scss/_ticket";
+@import "scss/_addguest";
+//@import "scss/_signup";

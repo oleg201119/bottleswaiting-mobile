@@ -1,0 +1,266 @@
+#preorder {
+  .scroll {
+    height: 100%;
+  }
+
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .tabs {
+    top: 45px !important;
+    border-color: #260038;
+  }
+  .tab-item {
+    border-bottom: solid 2px black;
+  }
+  .tab-item-active {
+    border-bottom: solid 2px #FF9E16;
+  }
+  .liquor-scroll {
+    height: 90px;
+    margin-bottom: 20px;
+    .item-selected {
+      background: #FF9E16 !important;
+    }
+    .item {
+      height: 100px;
+      padding: 8px;
+      background: #12011e;
+      border: none;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .name-style {
+        position: absolute;
+        bottom: 0px;
+        background: #2f2b2d;
+        opacity: 0.9;
+        width: calc(100% - 16px);
+        color: white;
+        height: 20px;
+        margin-bottom: 8px;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+  .next-btn {
+      border-radius: 0px;
+      margin-right: 20px;
+      margin-top: 15px;
+      min-width: 90px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 20px;
+      right: 0px;
+  }
+
+  #liquor-list {
+    color: white;
+    height: calc(100% - 260px);
+
+    .list {
+      height: 100%;
+    }
+    .scroll-list {
+      height: calc(100% - 40px);
+    }
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .detail input {
+      width: 35px;
+      text-align: center;
+      background: #fc9300;
+      color: white;
+      border:none;
+    }
+
+    input {
+      width: 35px;
+      text-align: center;
+      background: transparent;
+      color: transparent;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+    .total {
+      background: rgba(0,0,0, 0.4);
+//      width: 95%;
+//      margin: 0 auto;
+      position: absolute;
+      bottom: 70px;
+      width: calc(100% - 20px);
+      margin: 10px;
+    }    
+  }
+
+  #mixer-list {
+    color: white;
+    height: calc(100% - 150px);
+
+    .scroll-list {
+      height: calc(100% - 47px);
+    }
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .detail input {
+      width: 35px;
+      text-align: center;
+      background: #fc9300;
+      color: white;
+      border:none;
+    }
+
+    input {
+      width: 35px;
+      text-align: center;
+      background: transparent;
+      color: transparent;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+    .total {
+      background: rgba(0,0,0, 0.4);
+//      width: 95%;
+//      margin: 0 auto;
+      position: absolute;
+      bottom: 70px;
+      width: calc(100% - 20px);
+      margin: 10px;
+    }
+  }
+
+  #package-list {
+    color: white;
+    height: calc(100% - 150px);
+
+    .scroll-list {
+      height: calc(100% - 45px);
+    }
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .detail input {
+      width: 35px;
+      text-align: center;
+      background: #fc9300;
+      color: white;
+      border:none;
+    }
+
+    input {
+      width: 35px;
+      text-align: center;
+      background: transparent;
+      color: transparent;
+      border: 1px solid white;
+      border-radius: 2px;
+    }
+
+    .title {
+      font-size: 15px;
+    }
+
+    text-align: left;
+
+    span {
+      padding-left: 10px;
+      font-size: 12px;
+    }
+
+    .detail {
+      span {
+        padding-left: 10px;
+        font-size: 12px;
+      }
+    }
+    .total {
+      background: rgba(0,0,0, 0.4);
+//      width: 95%;
+//      margin: 0 auto;
+      position: absolute;
+      bottom: 70px;
+      width: calc(100% - 20px);
+      margin: 10px;
+    }
+  }
+
+  #celebration-list {
+    color: white;
+    height: calc(100% - 150px);
+
+    .scroll-list {
+      height: calc(100% - 45px);
+    }
+
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .detail input {
+      width: 35px;
+      text-align: center;
+      background: #fc9300;
+      color: white;
+    }
+
+    .detail{
+      .row{
+        padding-left:25px;
+      }
+
+      .desc {
+        font-size:12px;
+        padding-left: 30px;
+      }
+
+      .desc-value {
+        font-size:11px;
+        text-align: left;
+      }
+    }
+
+    .title {
+      font-size: 15px;
+      text-align:left;
+    }
+    .total {
+      background: rgba(0,0,0, 0.4);
+//      width: 95%;
+//      margin: 0 auto;
+      position: absolute;
+      bottom: 70px;
+      width: calc(100% - 20px);
+      margin: 10px;
+    }
+
+    .met-btn {
+      border-radius: 2px;
+      line-height: 25px;
+      min-height: 25px;
+      padding: 0 5px;
+      font-size: 13px;
+      min-width: 40px;
+    }
+  }
+}

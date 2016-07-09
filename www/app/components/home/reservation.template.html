@@ -1,0 +1,86 @@
+<ion-view class="reservation-view">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Reservation Info</h1>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+
+        <div class="description">
+            <h4>Congratulations</h4>
+            <p>Your reservation was successful. The order information is located below.</p>
+        </div>
+
+        <div class="venue-item">
+            <div class="venue-banner">
+                <img ng-src="{{venue.banner}}">
+            </div>
+            <div class="venue-info">
+                <span class="venue-name">{{venue.venueName}}</span>
+                <div class="row">
+                    <div class="col col-35">{{venue.venueLocation}}</div>
+                </div>
+            </div>
+            <div class="venue-avatar">
+                <img ng-src="{{venue.avatar}}">
+            </div>
+        </div>
+
+        <div id="map_canvas_small_reservation" class="map_small" data-tap-disabled="true">
+        </div>
+
+        <div class="confirmation">
+            <h4 class="title">Confirmation # 10423413</h4>
+            <div class="date">Date 04/22/2015</div>
+            <div class="table">Table: Pool T23</div>
+            <div class="eta">ETA: Unknown</div>
+            <div class="guest-list">
+                <div class="title">Guests:</div>
+                <div class="guest-item" ng-repeat="guest in guestlist track by $index">
+                    {{guest}}
+                </div>
+            </div>
+            <div class="liquor-list">
+                <div class="title">Liquor:</div>
+                <div class="liquor-item" ng-repeat="liquor in liquorlist track by $index">
+                    {{liquor}}
+                </div>
+            </div>
+            <div class="mixer-list">
+                <div class="title">Mixers:</div>
+                <div class="mixer-item" ng-repeat="mixer in mixerlist track by $index">
+                    {{mixer}}
+                </div>
+            </div>
+        </div>
+
+        <div class="payment">
+            <h4 class="title">Payment Info</h4>
+            <div class="people-payment" ng-repeat="people in members track by $index">
+                <div class="name">{{people.name}}</div>
+                <div class="card-payment">
+                    <div class="number">Card({{people.card.number}})</div>
+                    <div class="amount">{{people.card.amount}}({{people.card.percent}})</div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

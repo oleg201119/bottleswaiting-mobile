@@ -1,0 +1,95 @@
+.reservation-view {
+
+  // Content
+  .scroll-content {
+    background-color: $royal;
+
+    .description {
+      margin: 20px;
+
+      h4 {
+        color: $light;
+        margin-bottom: 0px;
+      }
+
+      p {
+        color: #A0A0A0;
+        font-size: 12px;
+      }
+    }
+
+    h4.title {
+      color: $light;
+    }
+
+    .confirmation {
+      margin: 20px;
+      color: $light;
+
+      .guest-list {
+        position: relative;
+
+        .title {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        .guest-item {
+          margin-left: 60px;
+        }
+      }
+
+      .liquor-list {
+        position: relative;
+
+        .title {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        .liquor-item {
+          margin-left: 60px;
+        }
+      }
+
+      .mixer-list {
+        position: relative;
+
+        .title {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+        .mixer-item {
+          margin-left: 60px;
+        }
+      }
+    }
+
+    .payment {
+      margin: 0px 20px 20px 20px;
+      color: $light;
+
+      .people-payment {
+        .name {
+
+        }
+
+        .card-payment {
+          position: relative;
+          height: 30px;
+
+          .number {
+            position: absolute;
+            left: 0px;
+          }
+
+          .amount {
+            position: absolute;
+            right: 0px;
+          }
+        }
+      }
+    }
+  }
+}

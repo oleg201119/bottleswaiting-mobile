@@ -1,0 +1,32 @@
+<ion-view class="signup-view">
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Confirm Your Phone Number</h4>
+            <p>A confirmation number has been sent to the phone number you provided. Please enter it now.</p>
+        </div>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusConfirmNumber==true, 'border-off':focusConfirmNumber==false}">
+                        <label ng-show="account.confirmnumber" class="floating-label" ng-class="{'focus-on':focusConfirmNumber==true, 'focus-off':focusConfirmNumber==false}">Confirmation Number</label>
+                        <input type="text" placeholder="Confirmation Number" ng-focus="focusConfirmNumber=true" ng-blur="focusConfirmNumber=false" ng-model="account.confirmnumber">
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-medium button-clear button-light min-width-100" ng-click="resendCode()">RESEND CODE</button>
+                <button class="button button-medium button-energized min-width-100" ng-click="goNext('signup5')">NEXT</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

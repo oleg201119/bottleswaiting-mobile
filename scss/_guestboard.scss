@@ -1,0 +1,103 @@
+.guestboard-view {
+
+  // Content
+  .scroll-content {
+    background-color: $royal;
+
+    .top-image {
+        width: 100%;
+        height: 130px;
+        background-position: center;
+        /* Make the background image cover the area of the <div>, and clip the excess */
+        background-size: cover;
+      }
+
+    .analytic-pane {
+      background-color: #13001e;
+      margin: 5px;
+      text-align: left;
+      color: white;
+      padding: 10px 10px 10px 20px;
+    }
+
+    .eta-select {
+      padding: 0px 20px 0px 20px;
+      margin-top: 10px;
+      width: 150px;
+
+      .eta-label {
+        text-align: left;
+        color: #d6801b;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+
+      .floating-label-field {
+        padding-top: 0px !important;
+      }
+    }
+
+    .guest-type-select {
+      padding: 10px 20px 0px 20px;
+
+      .type-item {
+        position: relative;
+        padding: 6px 10px 6px 38px;
+        font-size: 12px;
+
+        .floating-label-field {
+          width: 100px;
+        }
+
+        i {
+          position: absolute;
+          font-size: 18px;
+
+          top: 7px;
+          left: 12px;
+
+          &.icon-radio-select {
+            color: $energized;
+          }
+          &.icon-radio-normal {
+            color: #000000;
+          }
+        }
+
+        span {
+          color: $light;
+        }
+      }
+    }
+
+    .buttons {
+      padding: 0px 20px 0px 20px;
+      margin: 50px 10px 10px 10px;
+
+      text-align: right;
+    }
+
+    // Border
+    .border-on {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $energized;
+    }
+
+    .border-off {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: black;
+    }
+
+    // Focus
+    .focus-on {
+      color: $energized;
+    }
+
+    .focus-off {
+      color: #B7B7B7;
+    }
+
+  }
+}

@@ -1,0 +1,199 @@
+// Grid
+.col-15 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 15%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+}
+
+.col-27 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 27%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 27%;
+  -ms-flex: 0 0 27%;
+  flex: 0 0 27%;
+  max-width: 27%;
+}
+
+.col-30 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 30%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 30%;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.col-35 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 35%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 35%;
+  -ms-flex: 0 0 35%;
+  flex: 0 0 35%;
+  max-width: 35%;
+}
+
+.col-45 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 45%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 45%;
+  -ms-flex: 0 0 45%;
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+// Color
+.color-black {
+  color: black;
+}
+
+// Button
+.button-medium {
+  padding: 2px 4px 1px;
+  min-width: 28px;
+  min-height: 36px;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+.min-width-100 {
+  min-width: 100px;
+}
+
+// Navigation bar
+.bar-header {
+
+  background-image:none !important;
+
+  .title {
+    text-align: left;
+
+    .title-main {
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: 400;
+    }
+    .title-sub {
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 300;
+    }
+  }
+
+  .button {
+    .icon-order {
+      font-size: 16px;
+      line-height: 32px;
+    }
+
+    .icon-people {
+      font-size: 16px;
+      line-height: 32px;
+    }
+
+    .icon-more {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+}
+
+// Popup alert
+.popup-buttons .button {
+  color: $energized;
+  background: transparent;
+}
+
+// Short text
+.short-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Floating label
+.floating-label {
+  &.ng-hide-add, &.ng-hide-remove {
+    -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
+    transition: opacity 0.15s ease-in, top 0.2s linear;
+  }
+
+  &.ng-hide-remove, &.ng-hide-add.ng-hide-add-active {
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+  }
+
+  &.ng-hide-add, &.ng-hide-remove.ng-hide-remove-active {
+    position: absolute;
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.floating-label-field {
+  position: relative;
+  padding-top: 14px;
+
+  & > label:first-child {
+    position: absolute;
+    top: 0px;
+    font-size: 0.8em;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  & > label.hint {
+    position: absolute;
+    bottom: -16px;
+    font-size: 0.8em;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  & > input {
+    border: 0;
+    background: transparent;
+    color: $light;
+    width: 100%;
+    padding: 0px 4px;
+    height: 21px;
+  }
+
+  & > select {
+    border: 0;
+    background: transparent;
+    color: $light;
+    width: 100%;
+
+    &.floating-label-placeholder {
+      color: #A0A0A0;
+    }
+
+    option {
+      &.placeholder {
+        color: #A0A0A0;
+      }
+
+      &.option-item {
+        color: black;
+      }
+    }
+  }
+}
+
+// Event item
+@import "scss/_event";
+
+// Venue item
+@import "scss/_venue";
+
+// Map
+@import "scss/_map";

@@ -1,0 +1,68 @@
+<ion-view class="signup-view">
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Join Bottles Waiting</h4>
+        </div>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusEmail==true, 'border-off':focusEmail==false}">
+                        <label ng-show="account.email" class="floating-label" ng-class="{'focus-on':focusEmail==true, 'focus-off':focusEmail==false}">Email</label>
+                        <input type="text" placeholder="Email" ng-focus="focusEmail=true" ng-blur="focusEmail=false" ng-model="account.email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusPassword==true, 'border-off':focusPassword==false}">
+                        <label ng-show="account.password" class="floating-label" ng-class="{'focus-on':focusPassword==true, 'focus-off':focusPassword==false}">Password</label>
+                        <input type="password" placeholder="Password" ng-focus="focusPassword=true" ng-blur="focusPassword=false" ng-model="account.password">
+                        <label class="error" ng-show="hintPassword==true">Password is not 8 characters</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusConfirm==true, 'border-off':focusConfirm==false}">
+                        <label ng-show="account.confirm" class="floating-label" ng-class="{'focus-on':focusConfirm==true, 'focus-off':focusConfirm==false}">Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" ng-focus="focusConfirm=true" ng-blur="focusConfirm=false" ng-model="account.confirm">
+                        <label class="error" ng-show="hintConfirm==true">Password is not equal</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusZipCode==true, 'border-off':focusZipCode==false}">
+                        <label ng-show="account.zipcode" class="floating-label" ng-class="{'focus-on':focusZipCode==true, 'focus-off':focusZipCode==false}">Zip Code</label>
+                        <input type="text" placeholder="Zip Code" ng-focus="focusZipCode=true" ng-blur="focusZipCode=false" ng-model="account.zipcode">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusPromoCode==true, 'border-off':focusPromoCode==false}">
+                        <label ng-show="account.promocode" class="floating-label" ng-class="{'focus-on':focusPromoCode==true, 'focus-off':focusPromoCode==false}">Promo Code</label>
+                        <input type="text" placeholder="Promo Code" ng-focus="focusPromoCode=true" ng-blur="focusPromoCode=false" ng-model="account.promocode">
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-medium button-energized min-width-100" ng-click="goNext('signup2')">NEXT</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

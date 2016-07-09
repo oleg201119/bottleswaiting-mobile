@@ -1,0 +1,111 @@
+<ion-view class="location-view">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Location & Date</h1>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Choose Your City and Date</h4>
+            <p>We are repidly expanding our locations. Don't see yours?<br>
+                Tell use what city you'd like to see us in below.</p>
+        </div>
+
+        <div class="city-select">
+            <div class="city-item" ng-click="selectCity($index);" ng-repeat="city in cities track by $index">
+                <i ng-class="{'icon-radio-select': selectedCity==$index, 'icon-radio-normal': selectedCity!=$index}"></i>
+                <span>{{city}}</span>
+            </div>
+        </div>
+
+        <div class="date-select">
+            <div class="row">
+                <div class="col col-40">
+                    <div class="floating-label-field" ng-class="{'border-on':focusMonth==true, 'border-off':focusMonth==false}">
+                        <label ng-show="selectedDate.month" class="floating-label" ng-class="{'focus-on':focusMonth==true, 'focus-off':focusMonth==false}">Month</label>
+                        <select ng-focus="focusMonth=true" ng-blur="focusMonth=false" ng-model="selectedDate.month">
+                            <option value="" disabled class="placeholder">Month</option>
+                            <option ng-repeat="month in months track by $index">{{month}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col col-20">
+                    <div class="floating-label-field" ng-class="{'border-on':focusDay==true, 'border-off':focusDay==false}">
+                        <label ng-show="selectedDate.day" class="floating-label" ng-class="{'focus-on':focusDay==true, 'focus-off':focusDay==false}">Day</label>
+                        <input type="text" placeholder="Day" ng-focus="focusDay=true" ng-blur="focusDay=false" ng-model="selectedDate.day">
+                    </div>
+                </div>
+
+                <div class="col col-40">
+                    <div class="floating-label-field" ng-class="{'border-on':focusYear==true, 'border-off':focusYear==false}">
+                        <label ng-show="selectedDate.year" class="floating-label" ng-class="{'focus-on':focusYear==true, 'focus-off':focusYear==false}">Year</label>
+                        <select ng-focus="focusYear=true" ng-blur="focusYear=false" ng-model="selectedDate.year">
+                            <option value="" disabled class="placeholder">Year</option>
+                            <option ng-repeat="year in years track by $index" class="color-black">{{year}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="suggest-city">
+            <h4>Suggest A City(Optional)</h4>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusCountry==true, 'border-off':focusCountry==false}">
+                        <label ng-show="suggest.country" class="floating-label" ng-class="{'focus-on':focusCountry==true, 'focus-off':focusCountry==false}">Country</label>
+                        <select ng-focus="focusCountry=true" ng-blur="focusCountry=false" ng-model="suggest.country">
+                            <option value="" disabled class="placeholder">Country</option>
+                            <option ng-repeat="country in countries track by $index">{{country}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusState==true, 'border-off':focusState==false}">
+                        <label ng-show="suggest.state" class="floating-label" ng-class="{'focus-on':focusState==true, 'focus-off':focusState==false}">State</label>
+                        <select ng-focus="focusState=true" ng-blur="focusState=false" ng-model="suggest.state">
+                            <option value="" disabled class="placeholder">State</option>
+                            <option ng-repeat="state in states track by $index">{{state}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusCity==true, 'border-off':focusCity==false}">
+                        <label ng-show="suggest.city" class="floating-label" ng-class="{'focus-on':focusCity==true, 'focus-off':focusCity==false}">City</label>
+                        <input type="text" placeholder="City" ng-focus="focusCity=true" ng-blur="focusCity=false" ng-model="suggest.city">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="button button-medium button-energized min-width-100" ng-click="doNext()">NEXT</button>
+        </div>
+
+    </ion-content>
+
+</ion-view>

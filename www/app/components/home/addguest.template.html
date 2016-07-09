@@ -1,0 +1,80 @@
+<ion-view class="eventlist-view" id="addguest" >
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Add Guests</h1>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+                <button class="button" ng-click="openSideMenu()">
+                    <i class="icon-people"></i>
+                </button>
+
+                <button class="button" ng-click="openPopover($event)">
+                    <i class="icon-more"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Guest Info</h4>
+            <p>It's important to enter the correct info so your guests can enter the venue without any problems.</p>
+        </div>
+
+        <button class="button button-medium button-energized min-width-50 add-button" ng-click="addMoreGuest()">+</button>
+
+        <div class="wrapper" ng-repeat="item in guestList track by $index">
+
+            <div class="row title">
+                Guest {{ $index+1 }}
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':item.focusFirstName==true, 'border-off':item.focusFirstName==false}">
+                        <label ng-show="item.firstname" class="floating-label" ng-class="{'focus-on':item.focusFirstName==true, 'focus-off':item.focusFirstName==false}">Email</label>
+                        <input type="text" placeholder="First Name" ng-focus="item.focusFirstName=true" ng-blur="item.focusFirstName=false" ng-model="item.firstName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':item.focusLastName==true, 'border-off':item.focusLastName==false}">
+                        <label ng-show="item.lastName" class="floating-label" ng-class="{'focus-on':item.focusLastName==true, 'focus-off':item.focusLastName==false}">Email</label>
+                        <input type="text" placeholder="Last Name" ng-focus="item.focusLastName=true" ng-blur="item.focusLastName=false" ng-model="item.lastName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':item.focusPhoneNumber==true, 'border-off':item.focusPhoneNumber==false}">
+                        <label ng-show="item.phonenumber" class="floating-label" ng-class="{'focus-on':item.focusPhoneNumber==true, 'focus-off':item.focusPhoneNumber==false}">Phone</label>
+                        <input type="text" placeholder="Phone" ng-focus="item.focusPhoneNumber=true" ng-blur="item.focusPhoneNumber=false" ng-model="item.phonenumber">
+                        <label class="hint" ng-show="item.hintPhoneNumber==true">555-555-5555</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':item.focusGender==true, 'border-off':item.focusGender==false}">
+                        <label ng-show="item.gender" class="floating-label" ng-class="{'focus-on':item.focusGender==true, 'focus-off':item.focusGender==false}">Gender</label>
+                        <select ng-focus="item.focusGender=true" ng-blur="item.focusGender=false" ng-model="item.gender">
+                            <option value="" disabled class="placeholder">Gender</option>
+                            <option class="color-black" value="MALE">MALE</option>
+                            <option class="color-black" value="FEMALE">FEMALE</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

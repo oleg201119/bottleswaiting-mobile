@@ -1,0 +1,52 @@
+<ion-view class="eventlist-view" id="whattable">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Order More
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="bar bar-subheader">
+        <div class="big-text row">
+            Where Table Are you At
+        </div>
+        <div class="small-text row">
+            It's vital that you enter or select the correct table so that your order is delivered to you
+        </div>
+    </div>
+    <ion-content class="has-header has-tabs-top" ng-click="hideTableList()">
+        <div class="table-list">
+            <label class="item table-select item-select" ng-click="showTableList()">
+                <span class="input-label">Table</span>                
+            </label>
+            <div class="list" ng-show="bShowTableList">
+                <a class="item menu-item" ng-repeat="table in tableList" ng-click="goTable(table)">
+                    {{table.layoutName}} - {{table.name}}
+                </a>
+            </div>
+        </div>        
+        <div class="select-label">
+            SELECT FROM FLOORPLAN
+        </div>
+    </ion-content>           
+</ion-view>

@@ -1,0 +1,30 @@
+.favorites-view {
+
+  // Tabs
+  .tabs {
+    top: 44px !important;
+    border-color: $royal;
+
+    .tab-title {
+      font-size: 14px;
+    }
+
+    .tab-item {
+      max-width: none;
+      color: #B7B7B7;
+
+      &.activated, &.tab-item-active {
+        border-color: $energized;
+      }
+    }
+  }
+
+  // Content
+  .scroll-content {
+    background-color: $royal;
+
+    .event-list {
+
+    }
+  }
+}

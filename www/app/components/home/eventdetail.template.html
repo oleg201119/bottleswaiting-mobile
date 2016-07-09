@@ -1,0 +1,175 @@
+<ion-view class="eventdetail-view">
+
+    <div class="bar bar-header bar-energized">
+
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Proper Saturday
+                </div>
+                <div class="title-sub">Marquee</div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header has-footer">
+        <div class="event">
+            <img ng-src="{{event.croppedUrl ? event.croppedUrl : defaultEventImageUrl}}">
+        </div>
+
+        <div class="entertainer">
+            <div class="entertainer-avatar">
+                <img ng-src="{{event.entertainers[0].croppedUrl ? event.entertainers[0].croppedUrl : defaultDjImageUrl}}">
+            </div>
+
+            <div class="entertainer-name">
+                <h3 class="name short-text">{{event.entertainers[0].name}}</h3>
+                <div class="title short-text" ng-show="event.entertainers[0].headliner==true">Headliner</div>
+            </div>
+
+            <div class="like-pane" ng-click="reverseLike($index)">
+                <i class="icon icon-heart" ng-class="{'icon-heart':event.like, 'icon-heart-outline':!event.like}"></i>
+            </div>
+
+            <div class="row property">
+                <div class="col col-33">
+                    <button class="button button-clear button-energized">VISIT PAGE</button>
+                </div>
+                <div class="col col-27">
+                    <button class="button button-clear button-energized">MUSIC</button>
+                </div>
+                <div class="col col-20">
+                    <button class="button button-clear button-energized">BIO</button>
+                </div>
+                <div class="col col-20">
+                    <button class="button button-clear button-energized">TOUR</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="venue">
+            <div class="venue-avatar">
+                <img ng-src="{{event.thumbUrl}}">
+            </div>
+
+            <div class="venue-name">
+                <h3 class="name short-text">{{event.venueName}}</h3>
+                <div class="title short-text">{{event.venueCity}}, {{event.venueState}}</div>
+            </div>
+
+            <div class="like-pane" ng-click="reverseLike($index)">
+                <i class="icon icon-heart" ng-class="{'icon-heart':event.like, 'icon-heart-outline':!event.like}"></i>
+            </div>
+
+            <div class="row property">
+                <div class="col col-33">
+                    <button class="button button-clear button-energized">VISIT PAGE</button>
+                </div>
+                <div class="col col-34">
+                    <button class="button button-clear button-energized">EVENTS</button>
+                </div>
+                <div class="col col-33">
+                    <button class="button button-clear button-energized">ABOUT</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="map_canvas_small_event" class="map_small" data-tap-disabled="true">
+        </div>
+
+        <div class="info-tabs" style="position: relative">
+            <div class="row">
+                <div class="col col-30" ng-class="{'border-black':tabIndex!=1,'border-energized':tabIndex==1}" ng-click="tabIndex=1">
+                    <button class="button button-clear button-light">Main Info</button>
+                </div>
+                <div class="col col-30" ng-class="{'border-black':tabIndex!=2,'border-energized':tabIndex==2}" ng-click="tabIndex=2">
+                    <button class="button button-clear button-light">Dress Code</button>
+                </div>
+                <div class="col col-20" ng-class="{'border-black':tabIndex!=3,'border-energized':tabIndex==3}" ng-click="tabIndex=3">
+                    <button class="button button-clear button-light">Menu</button>
+                </div>
+                <div class="col col-20" ng-class="{'border-black':tabIndex!=4,'border-energized':tabIndex==4}" ng-click="tabIndex=4">
+                    <button class="button button-clear button-light">DJs</button>
+                </div>
+            </div>
+
+            <!-- Main info tab panel -->
+            <div class="tab-panel" ng-show="tabIndex==1">
+                <div class="main-info-row">
+                    <i class="icon icon-calendar"></i>03/22/2016
+                </div>
+
+                <div class="main-info-row">
+                    <i class="icon icon-clock"></i>9pm - Close
+                </div>
+
+                <div class="main-info-row">
+                    <i class="icon icon-people-outline"></i>21+
+                </div>
+
+                <div class="main-info-row">
+                    <i class="icon icon-music-note"></i>Hip Hop
+                </div>
+            </div>
+
+            <!-- Dress code tab panel -->
+            <div class="tab-panel" ng-show="tabIndex==2">
+                <div class="dress-code-title">Dressed To Impress</div>
+                <div class="dress-code-content">
+                    <p>
+                        Come dressed to impress. We are having a mascarade party thats going to be a night to remember. Come wearing a suit for the fellas and cocktail dress for the ladies. Don't forget your mask either. You're not gonna be the one who forgets theirs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Menu tab panel -->
+            <div class="tab-panel" ng-show="tabIndex==3">
+            </div>
+
+            <!-- DJ tab panel -->
+            <div class="tab-panel" ng-show="tabIndex==4">
+                <div class="dj-info-row">
+                    <div class="avatar">
+                        <img src="img/temp-event-avatar.png">
+                    </div>
+                    <div class="name">Stive Aoiki</div>
+                </div>
+
+                <div class="dj-info-row">
+                    <div class="avatar">
+                        <img src="img/temp-event-avatar.png">
+                    </div>
+                    <div class="name">Stive Aoiki</div>
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    <div class="row footer">
+        <div class="col">
+            <button class="button button-full button-balanced" ng-click="goBuyPasses()">Buy Passes/Tickets</button>
+        </div>
+        <div class="col">
+            <button class="button button-full button-calm" ng-click="goReserveTable()">Reserve Table</button>
+        </div>
+    </div>
+
+</ion-view>

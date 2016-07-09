@@ -1,0 +1,130 @@
+<ion-view class="eventlist-view" id="split-payment">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Split Payment
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+                <button class="button">
+                    <i class="icon-order"></i>
+                </button>
+
+                <button class="button" ng-click="openSideMenu()">
+                    <i class="icon-people"></i>
+                </button>
+
+                <button class="button" ng-click="openPopover($event)">
+                    <i class="icon-more"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="big-item row">
+            <div class="col-70">
+                Add Co-payers
+                <div class="small-item">
+                    A payment link will be sent to your co-payers via text message.
+                </div>
+            </div>
+            <div class="col-30 text-right">
+                <button class="button add-copayer-btn" ng-click="openAddCoPayer()">
+                    <i class="icon ion-plus placeholder-icon"></i>
+                </button>
+            </div>
+        </div>
+        <div ng-show="showAddCopayer" class="add_copayer">
+            <p>Contact List</p>
+            <p>Manual</p>
+        </div>
+        <div class="copayer-list">
+            <div class="list-item" ng-repeat="payer in copayerlist">
+                <div class="copayer-avatar">
+                    <img ng-src="{{payer.avatar}}" />
+                </div>
+                <div class="name">
+                    {{payer.name}}
+                </div>
+                <div class="tel">
+                    {{payer.tel}}
+                </div>
+                <div class="remove" ng-click="removeCopayer($index)">
+                    Remove
+                </div>
+            </div>
+        </div>
+        <div class="padding">
+            If co-payers do not pay within a hour, how would you like to handle your reservation.
+        </div>
+        <div>
+            <ion-radio ng-value="" ng-model="data.clientSide" class="" >
+                Pay the remaining balance
+            </ion-radio>
+            <ion-radio ng-value="" ng-model="data.clientSide" class="">
+                Cancel the reservation
+            </ion-radio>
+        </div>
+        <div class="text-right">
+            <button class="button sendpayment_btn" ng-click="sendPayment()">
+                SEND PAYMENT
+            </button>
+        </div>
+    </ion-content>           
+</ion-view>
+
+
+<script id="addcopayer-Modal.html" type="text/ng-template">
+  <ion-modal-view id="addcopayer-Modal">
+    <ion-content>
+      <div class="contact-list" ng-click="showContactList()">Contact List</div>
+      <div class="manual" ng-click="showManual()">Manual</div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id="addnewcopayer-Modal.html" type="text/ng-template">
+  <ion-modal-view id="addnewcopayer-Modal">
+    <ion-content>
+      <div class="list">
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="John">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Last Name</span>
+            <input type="text" placeholder="Suhr">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label red">Phone Number</span>
+            <input class="tel" type="text" placeholder="">
+          </label>
+          <label class="red tel-placeholder">
+            555-555-5555
+          </label>
+          <div class="gender">
+            <label class="input-label">Gender</label>
+            <select>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+          <div>
+        </div>
+        <div class="buttons text-right">
+            <a class="sendpayment_btn" ng-click="cancelAddCopayer()">
+                CANCEL
+            </a>
+            <a class=" sendpayment_btn" ng-click="AddCopayer()">
+                ADD
+            </a>
+        </div>
+    </ion-content>
+  </ion-modal-view>
+</script>

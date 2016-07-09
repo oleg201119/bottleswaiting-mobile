@@ -1,0 +1,83 @@
+<ion-view class="favorites-view">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Favorites</h1>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-tabs class="tabs-striped tabs-top tabs-background-royal tabs-color-light tabs-icon-left">
+
+        <ion-tab title="Events" icon-off="icon-event" icon-on="icon-event">
+            <ion-view>
+                <ion-content class="has-header has-tabs-top">
+                    <div class="event-list">
+                        <div class="event-item" ng-repeat="event in events track by $index" ng-click="goEventDetail(event.eventId)">
+                            <div class="event-banner">
+                                <img ng-src="{{event.banner}}">
+                            </div>
+                            <div class="event-promotion" ng-if="event.promotionText!=''">
+                                {{event.promotionText}}
+                            </div>
+                            <div class="like-pane" ng-click="reverseLike($index)">
+                                <i class="icon" ng-class="{'icon-heart':event.like, 'icon-heart-outline':!event.like}"></i>
+                            </div>
+                            <div class="event-info">
+                                <span class="event-name">{{event.eventName}}</span>
+                                <div class="row">
+                                    <div class="col col-45">{{event.entertainerName}}</div>
+                                    <div class="col col-35">{{event.venueName}}</div>
+                                    <div class="col col-20">{{event.musicType}}</div>
+                                </div>
+                            </div>
+                            <div class="entertainer-avatar" ng-click="goEntertainerProfile()">
+                                <img ng-src="{{event.avatar}}" ng-if="event.avatar">
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="Venues" icon-off="icon-venue" icon-on="icon-venue">
+            <ion-view>
+                <ion-content class="has-header has-tabs-top">
+                    <div class="venue-list">
+                        <div class="venue-item" ng-repeat="venue in venues track by $index" ng-click="goVenueDetail($index)">
+                            <div class="venue-banner">
+                                <img ng-src="{{venue.banner}}">
+                            </div>
+                            <div class="like-pane" ng-click="reverseLike($index)">
+                                <i class="icon" ng-class="{'icon-heart':venue.like, 'icon-heart-outline':!venue.like}"></i>
+                            </div>
+                            <div class="venue-info">
+                                <span class="venue-name">{{venue.venueName}}</span>
+                                <div class="row">
+                                    <div class="col col-35">{{venue.venueLocation}}</div>
+                                </div>
+                            </div>
+                            <div class="venue-avatar">
+                                <img ng-src="{{venue.avatar}}">
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>

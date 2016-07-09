@@ -1,0 +1,97 @@
+.eventlist-view {
+
+  // Calendar
+  .bar-calendar {
+    padding: 0px;
+  }
+
+  .panel-calendar {
+    width: 100%;
+    height: 125px;
+    background-color: $energized;
+    color: $light;
+  }
+
+  .row-week {
+    width: 100%;
+    height: 44px;
+    padding: 6px 0px 0px 0px;
+    background-color: $energized;
+    text-align: center;
+  }
+  .col-day {
+    position: relative;
+
+    width: 14.28%;
+    height: 38px;
+    padding: 5px 0px 0px 0px;
+
+    color: $light;
+
+    &.highlight {
+
+      background-color: #E77C0A;
+      height: 100%;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 52%;
+        height: 0px;
+        top: 100%;
+        left: 0px;
+
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+
+        padding-bottom: 25%;
+        -webkit-transform: rotate(-14.4deg) skewX(61deg);
+        -moz-transform: rotate(-14.4deg) skewX(61deg);
+        transform: rotate(-14.4deg) skewX(61deg);
+        background-color: #E77C0A;
+      }
+    }
+
+    .day-title {
+      font-size: 9px;
+      font-weight: 300;
+      line-height: 10px;
+      opacity: 0.5;
+    }
+
+    .day-number {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+  }
+
+  // Tabs
+  .tabs {
+    top: 88px !important;
+    border-color: $royal;
+
+
+    .tab-title {
+      font-size: 14px;
+    }
+
+    .tab-item {
+      max-width: none;
+      color: #B7B7B7;
+
+      &.activated, &.tab-item-active {
+        border-color: $energized;
+      }
+    }
+  }
+
+  // Content
+  .scroll-content {
+    background-color: $royal;
+
+    .event-list {
+
+    }
+  }
+}

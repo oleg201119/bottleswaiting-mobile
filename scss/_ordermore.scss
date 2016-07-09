@@ -1,0 +1,250 @@
+#ordermore {
+  .bar-subheader {
+      background: #260038;
+      color: white;
+      height: 110px;
+      padding: 20px 30px 0px 30px;
+
+      .big-text {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .small-text {
+        opacity: 0.7;
+      }
+  }
+
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+
+  .scroll-content {
+    top: 150px;
+  }
+}
+
+#whattable {
+  .bar-subheader {
+      background-color: #260038;
+      color: white;
+      height: 110px;
+      padding: 20px 30px 0px 30px;
+      border: none;
+
+      .big-text {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .small-text {
+        opacity: 0.7;
+      }
+  }
+
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+
+  .scroll-content {
+    top: 155px;
+  }
+
+  .table-select {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: #260038;
+    border: none;
+    border-bottom: solid 2px black;
+    span {
+      color: white;
+      opacity: 0.6;
+    }
+  }
+
+  .list {
+    background: black;
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    position: absolute;
+    left: 10%;
+    color: white;
+    .item {
+      background: black;
+      color: white;
+      border: none;
+    }
+  }
+
+  .select-label {
+    color: #C8761D;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+
+.disclaimer-popup {
+  .popup {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .popup-title {
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .popup-buttons button {
+    background: transparent;
+    color: #E68A0C;
+  }
+}
+
+#choosetable {
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .table-image {
+    width: 500px;
+    height: 100%;
+  }
+  a.item {
+    border: none;
+    background: black;
+    color: white;
+  }
+  .icon {
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+  }
+  .ion-available {
+    background-image: url('../img/table-available.svg');
+  }
+  .ion-not-available {
+    background-image: url('../img/table-not-available.svg');
+  }
+  .ion-celebrity {
+    background-image: url('../img/table-celebrity.svg');
+  }
+  .bar-subheader {
+    background: black;
+    .row {
+      padding: 0px;
+      height: 100%;
+      span {
+        position: relative;
+        top: -10px;
+      }
+    }
+  }
+  .scroll {
+    height: 100%;
+  }
+}
+
+
+#orderdetailfirst {
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .has-tabs-top {
+    top: 45px;
+  }
+  .order-detail {
+    color: white;
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+    }
+    .subtotal {
+      border-top: solid 1px black;
+      margin-top: 10px;
+    }
+    .tax {
+      border-bottom: solid 1px black;
+      margin-bottom: 10px;
+    }
+  }
+  .checkout-button {
+    line-height: 40px !important;
+    min-height: 40px;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: 0px;
+  }
+}
+
+#orderdetailsecond {
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .has-tabs-top {
+    top: 190px;
+  }
+  .header-info {
+    padding: 0px;
+  }
+  .order-detail {
+    color: white;
+    .header {
+      border-bottom: solid 1px black;
+      padding-bottom: 0px;
+      margin-bottom: 10px;
+    }
+    .subtotal {
+      border-top: solid 1px black;
+      margin-top: 10px;
+    }
+    .let-tax {
+      border-bottom: solid 1px black;
+      margin-bottom: 10px;
+    }
+  }
+  .underline-yellow {
+    max-width: 60px;
+    border-bottom: solid 1px #FF9E16;
+  }
+  .under-line {
+    max-width: 60px;
+    border-bottom: solid 1px black;
+  }
+  .security-tip {
+    border-bottom: solid 1px black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .checkout-button {
+    line-height: 40px !important;
+    min-height: 40px;
+    margin-right: 10px;
+    font-weight: bold;
+    border-radius: 0px;
+    min-width: 90px;
+  }
+}
+
+#preorder {
+  .title-main {
+    font-size: 22px;
+    line-height: 45px;
+  }
+  .tabs {
+    top: 45px !important;
+    border-color: #260038;
+  }
+  .tab-item {
+    border-bottom: solid 2px black;
+  }
+  .tab-item-active {
+    border-bottom: solid 2px #FF9E16;
+  }
+}

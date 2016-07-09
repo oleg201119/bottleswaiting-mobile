@@ -1,0 +1,87 @@
+// Font path
+// -------------------------------
+
+$app-font-path: "../fonts";
+
+// Fonts
+// -------------------------------
+
+@font-face {
+  font-family: "Helvetica Bold";
+  src:  url("#{$app-font-path}/helvetica-bold-webfont.eot");
+  src:  url("#{$app-font-path}/helvetica-bold-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/helvetica-bold-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/helvetica-bold-webfont.woff") format("woff"),
+  url("#{$app-font-path}/helvetica-bold-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/helvetica-bold-webfont.svg#helveticabold") format("svg");
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  src:  url("#{$app-font-path}/opensans-regular-webfont.eot");
+  src:  url("#{$app-font-path}/opensans-regular-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/opensans-regular-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/opensans-regular-webfont.woff") format("woff"),
+  url("#{$app-font-path}/opensans-regular-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/opensans-regular-webfont.svg#open_sansregular") format("svg");
+}
+
+@font-face {
+  font-family: "Open Sans Light";
+  src:  url("#{$app-font-path}/opensans-light-webfont.eot");
+  src:  url("#{$app-font-path}/opensans-light-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/opensans-light-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/opensans-light-webfont.woff") format("woff"),
+  url("#{$app-font-path}/opensans-light-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/opensans-light-webfont.svg#open_sanslight") format("svg");
+}
+
+@font-face {
+  font-family: "Open Sans Semibold";
+  src:  url("#{$app-font-path}/opensans-semibold-webfont.eot");
+  src:  url("#{$app-font-path}/opensans-semibold-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/opensans-semibold-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/opensans-semibold-webfont.woff") format("woff"),
+  url("#{$app-font-path}/opensans-semibold-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src:  url("#{$app-font-path}/roboto-bold-webfont.eot");
+  src:  url("#{$app-font-path}/roboto-bold-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/roboto-bold-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/roboto-bold-webfont.woff") format("woff"),
+  url("#{$app-font-path}/roboto-bold-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/roboto-bold-webfont.svg#robotobold") format("svg");
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src:  url("#{$app-font-path}/roboto-light-webfont.eot");
+  src:  url("#{$app-font-path}/roboto-light-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/roboto-light-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/roboto-light-webfont.woff") format("woff"),
+  url("#{$app-font-path}/roboto-light-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/roboto-light-webfont.svg#robotolight") format("svg");
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src:  url("#{$app-font-path}/roboto-medium-webfont.eot");
+  src:  url("#{$app-font-path}/roboto-medium-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/roboto-medium-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/roboto-medium-webfont.woff") format("woff"),
+  url("#{$app-font-path}/roboto-medium-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/roboto-medium-webfont.svg#robotomedium") format("svg");
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src:  url("#{$app-font-path}/roboto-regular-webfont.eot");
+  src:  url("#{$app-font-path}/roboto-regular-webfont.eot") format("embedded-opentype"),
+  url("#{$app-font-path}/roboto-regular-webfont.woff2") format("woff2"),
+  url("#{$app-font-path}/roboto-regular-webfont.woff") format("woff"),
+  url("#{$app-font-path}/roboto-regular-webfont.ttf") format("truetype"),
+  url("#{$app-font-path}/roboto-regular-webfont.svg#robotoregular") format("svg");
+}

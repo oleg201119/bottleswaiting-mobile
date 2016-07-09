@@ -1,0 +1,62 @@
+<ion-view class="eventlist-view" id="ordermore">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Order More
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="bar bar-subheader">
+        <div class="big-text row">
+            Where Are You
+        </div>
+        <div class="small-text row">
+            Choose the venue you are at. If you are in the wrong city, change the city in the menu.
+        </div>
+    </div>
+    <ion-content class="has-header has-tabs-top">
+        <div class="event-list">
+            <!--<div class="event-item" ng-repeat="venue in venues track by $index" ng-click="goWhatTable($index)">-->
+            <div class="event-item" ng-repeat="venue in availableVenues track by $index" ng-click="goWhatTable($index)">
+                <div class="event-banner">
+                    <img ng-src="{{venue.background.photoUrl}}" />
+                </div>
+                <!--<div class="event-promotion" ng-if="event.promotionText!=''">
+                    {{event.promotionText}}
+                </div>-->
+                <div class="like-pane" ng-click="reverseLike($index)" style="z-index: 100;">
+                    <i class="icon" ng-class="{'icon-heart':event.like, 'icon-heart-outline':!event.like}"></i>
+                </div>
+                <div class="event-info">
+                    <span class="event-name">{{venue.name}}</span>
+                    <div class="row">
+                        <div class="col col-45">{{venue.city}}</div>
+                    </div>
+                </div>
+                <div class="entertainer-avatar" ng-click="goEntertainerProfile()">
+                    <img ng-src="{{venue.avatarUrl}}">
+                </div>
+            </div>
+        </div>
+    </ion-content>           
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view class="signup-view">
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <h1 class="title">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-header">
+        <div class="description">
+            <h4>Share Your Promo Code</h4>
+            <p>Share your code to get sweet deals on your next puchase with Bottles Waiting.</p>
+        </div>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="floating-label-field" ng-class="{'border-on':focusPromoShare==true, 'border-off':focusPromoShare==false}">
+                        <label ng-show="account.promoShare" class="floating-label" ng-class="{'focus-on':focusPromoShare==true, 'focus-off':focusPromoShare==false}">Promo Code</label>
+                        <input type="text" placeholder="Promo Code" ng-focus="focusPromoShare=true" ng-blur="focusPromoShare=false" ng-model="account.promoShare">
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="button button-medium button-clear button-light min-width-100" ng-click="sharePromoCode()">SHARE</button>
+                <button class="button button-medium button-energized min-width-100" ng-click="goFinish()">FINISH</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

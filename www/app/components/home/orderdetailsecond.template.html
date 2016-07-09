@@ -1,0 +1,105 @@
+<ion-view class="eventlist-view" id="orderdetailsecond">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Order Details
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="bar bar-subheader bar-calendar">
+        <div class="row header-info event-item">
+            <div class="event-banner">
+                <img ng-src="{{orderDetail.banner}}">
+            </div>
+            <div class="event-info">
+                <span class="event-name">{{orderDetail.eventName}}</span>
+                <div class="row">
+                    <div class="col col-45">{{orderDetail.entertainerName}}</div>
+                    <div class="col col-35">{{orderDetail.venueName}}</div>
+                    <div class="col col-20">{{orderDetail.musicType}}</div>
+                </div>
+            </div>
+            <div class="entertainer-avatar" ng-click="goEntertainerProfile()">
+                <img ng-src="{{orderDetail.avatar}}">
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="has-tabs-top">
+        <div class="order-detail">
+            <div class="row header">
+              <div class="col col-20">Qty.</div>
+              <div class="col col-60">Type</div>
+              <div class="col col-20">Price</div>
+            </div>
+
+            <div class="row detail">
+              <div class="col col-20">2</div>
+              <div class="col col-60">VIP Passes(Male)</div>
+              <div class="col col-20">$400</div>
+            </div>
+
+            <div class="row detail">
+              <div class="col col-20">2</div>
+              <div class="col col-60">All You Can Drink(Female)</div>
+              <div class="col col-20">$200</div>
+            </div>
+
+            <div class="row subtotal">
+              <div class="col col-80 text-center">Subtotal</div>
+              <div class="col col-20">$600</div>
+            </div>
+            <div class="row tax">
+              <div class="col col-80 text-center">Tax</div>
+              <div class="col col-20">$54</div>
+            </div>
+            <div class="row let-tax">
+              <div class="col col-80 text-center">L.E.T. Tax</div>
+              <div class="col col-20">$104</div>
+            </div>
+
+            <div class="row server-tip">
+              <div class="col col-80 text-center">Server Tip</div>
+              <div class="col col-20 underline-yellow">Tip<br/>$600</div>
+            </div>
+            <div class="row busser-tip">
+              <div class="col col-80 text-center">Busser Tip(Optional)</div>
+              <div class="col col-20 under-line">Tip</div>
+            </div>
+            <div class="row security-tip">
+              <div class="col col-80 text-center">Security Tip(Optional)</div>
+              <div class="col col-20 under-line">Tip</div>
+            </div>
+
+            <div class="row total">
+              <div class="col col-80 text-center">Total</div>
+              <div class="col col-20">$2270</div>
+            </div>
+        </div>
+        <div class="text-right">
+            <button class="checkout-button button button-energized">
+              PAY
+            </button>
+        </div>
+    </ion-content>           
+</ion-view>

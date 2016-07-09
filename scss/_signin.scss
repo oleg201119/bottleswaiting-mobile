@@ -1,0 +1,153 @@
+.signin-view {
+
+  // Background
+  background-color: $royal;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .scroll-content {
+    // Background
+    background-color: transparent;
+  }
+
+  // Logo
+  .logo-section {
+    width: 100%;
+    height: 280px;
+    text-align: center;
+
+    img {
+      width: 160px;
+    }
+  }
+
+  // Form elements
+  .form-section {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+
+    // Facebook button
+    .button-facebook {
+      background-color: #5454A4;
+      color: $light;
+
+      border: none;
+      padding: 0px;
+      padding-left: 47px;
+      margin-bottom: 20px;
+
+      .facebook-icon {
+        background-color: #333583;
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        display: inline-block;
+
+        width: 47px;
+        height: 100%;
+
+        font-family: "Helvetica Bold";
+        font-size: 30px;
+        line-height: 47px;
+      }
+
+      &.activated {
+        background-color: darken(#5454A4, 10%);
+
+        .facebook-icon {
+          background-color: darken(#333583, 10%);
+        }
+      }
+    }
+
+    // Focus style for email and password
+    .focus-email-on, .focus-password-on {
+      .icon {
+        color: $energized;
+      }
+
+      .item-input {
+        border-color: $energized;
+      }
+    }
+
+    .focus-email-off, .focus-password-off {
+      .icon {
+        color: $light;
+      }
+
+      .item-input {
+        border-color: black;
+      }
+    }
+
+    // Input elements for email and password
+    .input-icon {
+      position: relative;
+
+      .icon {
+        position: absolute;
+        top: 14px;
+        left: 1px;
+        font-size: 20px;
+      }
+
+      .item-input {
+        background-color: transparent;
+        margin: 0px 0px 0px 30px;
+        padding-left: 1px;
+
+        border-top: none;
+        border-left: none;
+        border-right: none;
+
+        input {
+          color: $light;
+          padding-right: 1px;
+        }
+      }
+    }
+
+    .row {
+      padding: 0px;
+      margin-top: 30px;
+
+      .col {
+        padding: 0px;
+
+        .button {
+          padding: 0px;
+          color: $light;
+
+          &.button-login {
+            width: 90%;
+            margin-left: 10%;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+  .row.footer {
+    position: absolute;
+    padding: 0px;
+    bottom: 0px;
+    text-align: center;
+
+    .col {
+      padding: 0px;
+
+      .button {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

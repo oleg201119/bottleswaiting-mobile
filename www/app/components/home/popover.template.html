@@ -1,0 +1,48 @@
+<ion-popover-view class="popover-view" ng-controller="PopoverController">
+
+    <div class="bar bar-header bar-energized">
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+                <button class="button" ng-click="closePopover()">
+                    <i class="icon-more"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <ion-content class="has-header" scroll="false">
+        <div class="list">
+            <a class="item menu-item" ng-click="handlePopover('order')">
+                Order More Bottles/Mixers
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('calendar')">
+                Calendar
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('favorites')">
+                Favorites
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('music')">
+                Music
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('maps')">
+                Maps
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('venues')">
+                Venues
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('location')">
+                Change Cities
+            </a>
+
+            <a class="item menu-item" ng-click="handlePopover('walkthrough')">
+                How it Works
+            </a>
+        </div>
+    </ion-content>
+</ion-popover-view>

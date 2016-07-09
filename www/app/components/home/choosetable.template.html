@@ -1,0 +1,103 @@
+<ion-view class="eventlist-view" id="choosetable">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Choose Table
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+            <button class="button">
+                <i class="icon-order"></i>
+            </button>
+
+            <button class="button" ng-click="openSideMenu()">
+                <i class="icon-people"></i>
+            </button>
+
+            <button class="button" ng-click="openPopover($event)">
+                <i class="icon-more"></i>
+            </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="bar bar-subheader">
+        <div class="row">
+            <a class="item item-icon-left">
+                <i class="icon ion-available"></i>
+                <span>Available</span>
+            </a>
+            <a class="item item-icon-left">
+                <i class="icon ion-not-available"></i>
+                <span>Not Available</span>
+            </a>
+            <a class="item item-icon-left">
+                <i class="icon ion-celebrity"></i>
+                <span>Celebrity</span>
+            </a>
+      </div>       
+    </div>
+
+    <style>
+        .unavailable-alert{
+            background: #EC2424;
+            font-size: 10px;
+            margin-left: -15px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: -20px;
+        }
+
+        .celebrity-alert {
+            background: #FF9815;
+            font-size: 10px;
+            margin-left: -11px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: -20px;
+        }
+
+    </style>
+
+
+    <ion-tabs class="tabs-striped tabs-top tabs-background-royal tabs-color-light tabs-icon-left" >
+        <ion-tab title="{{layout.name}}" ng-repeat="layout in layoutList track by $index" ng-click="onClickTab($index)">
+        </ion-tab>
+    </ion-tabs>
+
+    <ion-view ng-repeat="layout in layoutList track by $index" id="content{{$index}}">
+        <ion-content class="has-header has-subheader has-tabs-top">
+            <ion-scroll class="table-image" zooming="true" direction="xy">
+                <!--<img src="./img/table-map.jpg" ng-click="onPreorder()"/>-->
+                <img ng-src="{{layout.photoUrl}}" ng-click="onImageClick()"/>
+
+                <div ng-repeat="table in tableList" style="position:absolute;left:{{table.x * 100}}%;top:{{table.y * 100}}%;display:block">
+                    <div ng-if="layout.layoutId==table.layoutId && table.reserved==false && table.celebrity==false">
+                        <i class="icon ion-available" style="display:block" ng-click="onAvailable(table)" ></i>
+                    </div>
+                    <div ng-if="layout.layoutId==table.layoutId && table.reserved==true">
+                        <div class="unavailable-alert" ng-show="table.show">
+                            Unavailable
+                        </div>
+                        <i class="icon ion-not-available" style="display:block" ng-click="onUnavailable(table)"></i>
+                    </div>
+
+                    <div ng-if="layout.layoutId==table.layoutId && celebrity.celebrity==true">
+                        <div class="celebrity-alert" ng-show="table.show">
+                            Celebrity
+                        </div>
+                        <i class="icon ion-celebrity" style="display:block" ng-click="onCelebrity(table)"></i>
+                    </div>
+                </div>
+
+            </ion-scroll>
+        </ion-content>
+    </ion-view>
+
+</ion-view>
+<!--layout.layoutId==table.layoutId &&-->

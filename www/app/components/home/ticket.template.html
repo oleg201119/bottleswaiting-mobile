@@ -1,0 +1,109 @@
+<ion-view class="eventlist-view" id="ticket">
+
+    <div class="bar bar-header bar-energized">
+        <div class="title title-left">
+            <div class="title">
+                <div class="title-main">
+                    Passes
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons buttons-right">
+            <span class="right-buttons">
+                <button class="button" ng-click="openSideMenu()">
+                    <i class="icon-people"></i>
+                </button>
+
+                <button class="button" ng-click="openPopover($event)">
+                    <i class="icon-more"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="event-list">
+        <div class="event-item">
+            <div class="event-banner">
+                <img ng-src="{{selectedEvent.banner}}">
+            </div>
+            <div class="event-promotion" ng-if="selectedEvent.promotionText!=''">
+                {{selectedEvent.promotionText}}
+            </div>
+            <div class="event-info">
+                <span class="event-name">{{selectedEvent.eventName}}</span>
+                <div class="row">
+                    <div class="col col-45">{{selectedEvent.entertainerName}}</div>
+                    <div class="col col-35">{{selectedEvent.venueName}}</div>
+                    <div class="col col-20">{{selectedEvent.musicType}}</div>
+                </div>
+            </div>
+            <div class="entertainer-avatar">
+                <img ng-src="{{selectedEvent.avatar}}" ng-if="selectedEvent.avatar">
+            </div>
+        </div>
+    </div>
+
+    <ion-tabs class="tabs-striped tabs-top tabs-background-royal tabs-color-light tabs-icon-left">
+        <ion-tab title="Male">
+            <ion-view>
+                <ion-content class="has-header">
+                    <div id="male-guest-list">
+                        <div class="row header">
+                            <div class="col col-20">Qty.</div>
+                            <div class="col col-60" style="text-align:left">Type</div>
+                            <div class="col col-20" style="text-align:left">Price</div>
+                        </div>
+
+                        <div class="list">
+                            <ion-scroll direction="y" class="scroll-list">
+                                <div class="row detail" ng-repeat="item in malePassList">
+                                    <div class="col col-20"><input type="number" ng-model="item.count" min="0"></div>
+                                    <div class="col col-60" style="text-align:left">{{item.passType}}</div>
+                                    <div class="col col-20" style="text-align:left">${{item.price * item.count}}</div>
+                                </div>
+                            </ion-scroll>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                            NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+
+        <ion-tab title="Female">
+            <ion-view>
+                <ion-content class="has-header">
+                    <div id="female-guest-list">
+                        <div class="row header">
+                            <div class="col col-20">Qty.</div>
+                            <div class="col col-60" style="text-align:left">Type</div>
+                            <div class="col col-20" style="text-align:left">Price</div>
+                        </div>
+
+                        <div class="list">
+                            <ion-scroll direction="y" class="scroll-list">
+                                <div class="row detail" ng-repeat="item in femalePassList">
+                                    <div class="col col-20"><input type="number" ng-model="item.count" min="0"></div>
+                                    <div class="col col-60" style="text-align:left">{{item.passType}}</div>
+                                    <div class="col col-20" style="text-align:left">${{item.price * item.count}}</div>
+                                </div>
+                            </ion-scroll>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button class="next-btn button button-energized">
+                            NEXT
+                        </button>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>
